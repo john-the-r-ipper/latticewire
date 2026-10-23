@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../../site.config.mjs';
+---
+
+<BaseLayout title="About">
+  <div class="container page">
+    <h1 class="page-title">About {siteConfig.name}</h1>
+
+    <div class="about-body">
+      <p class="page-lede">
+        {siteConfig.name} is a blog about the practical wiring behind messaging commerce: taking orders inside a
+        chat thread, running multi-channel customer communications across Messenger, WhatsApp, and Instagram, and
+        automating the small-business workflows that make it all hold together.
+      </p>
+
+      <h2>What we write about</h2>
+      <ul>
+        <li><strong>Chat-order operations</strong> — how order-taking moves from forms and carts into conversations.</li>
+        <li><strong>Multi-channel comms</strong> — keeping one coherent conversation across the channels your customers already use.</li>
+        <li><strong>SMB automation</strong> — where AI earns its keep for small teams and where human hands still matter.</li>
+        <li><strong>Commerce culture</strong> — how messaging-first buying is taking shape in different markets, including Bangladesh.</li>
+      </ul>
+
+      <h2>Who runs this site</h2>
+      <div class="about-discovery">
+        <h3>Disclosure: operated by OnlyOrders</h3>
+        <p>
+          This blog is operated by <a href="https://onlyorders.tech">OnlyOrders</a>, a company that builds AI
+          auto-reply and chat-order software for e-commerce across Facebook Messenger, WhatsApp, and Instagram.
+          OnlyOrders creates {siteConfig.name} as an educational, SEO content initiative — a way to share useful,
+          practical thinking about messaging commerce for small businesses.
+        </p>
+        <p>
+          We are not an independent newsroom. We don't claim to be. When we publish opinion or analysis, we say so,
+          and we avoid inventing statistics or quotes. Where we reference specific facts and figures, we anchor them
+          to public, sourced information or clearly mark our own interpretation.
+        </p>
+      </div>
+
+      <h2>Editorial line</h2>
+      <p>
+        We believe the most interesting commerce happens where the conversation already is. Our posts favor
+        practicality over hype: operations checklists, channel strategy, buyer behavior, and honest notes on what
+        automation can and cannot do. Anything we publish under the {siteConfig.name} banner is meant to inform,
+        not to sell — though we do occasionally mention OnlyOrders where it is directly relevant to the topic.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions, corrections, or a topic you'd like us to cover? Reach the editorial team via OnlyOrders at
+        <a href="https://onlyorders.tech">onlyorders.tech</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
