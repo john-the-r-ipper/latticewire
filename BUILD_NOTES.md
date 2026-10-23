@@ -120,3 +120,10 @@ NEW_URLS=https://john-the-r-ipper.github.io/latticewire/onlyorders/,https://john
 | Vercel prod `https://latticewire.vercel.app` | 8/8 passed |
 
 POLISH: latticewire checks=pass indexnow=200/200
+
+## Content (2026-10-24)
+
+- Added post: `whatsapp-messenger-apis-small-sellers.md` (Multi-channel, published 2026-10-24). Cites Meta Messenger Platform (get-started) and WhatsApp Cloud API overview docs. No invented claims.
+- Build green (14 pages, Pages env). Deploy: Pages workflow + Vercel prod. Live checks both hosts pass.
+
+NEW_URLS=https://john-the-r-ipper.github.io/latticewire/blog/whatsapp-messenger-apis-small-sellers/ CHECKS=pass
