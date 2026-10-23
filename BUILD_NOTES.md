@@ -59,3 +59,12 @@ $ npm run build
 - **Pages config:** `build_type=workflow`, source branch `main`, path `/`
 - **Secret scan:** clean — no keys, no `sk_`, no `ghp_`, no `.env` in tree
 - **Disclosure:** `/about` discloses operation by OnlyOrders (https://onlyorders.tech); no "Oryxa" references anywhere
+
+## Vercel deployment
+
+- **Preview URL:** https://latticewire-8uy2htztw-john-the-r-ippers-projects.vercel.app (deployment protection enabled)
+- **Production URL:** https://latticewire.vercel.app
+- **Project:** `latticewire` under `john-the-r-ippers-projects` scope
+- **Deploy:** `npx vercel deploy --prod --name latticewire` (Astro static output, `dist`); preview deployed first, then production
+- **Build env:** `SITE_URL` set to production URL (`https://latticewire.vercel.app`) for production and preview; sitemap/RSS reference it
+- **Verify:** production root, `/about/`, and `/sitemap-index.xml` return HTTP 200
