@@ -68,3 +68,21 @@ $ npm run build
 - **Deploy:** `npx vercel deploy --prod --name latticewire` (Astro static output, `dist`); preview deployed first, then production
 - **Build env:** `SITE_URL` set to production URL (`https://latticewire.vercel.app`) for production and preview; sitemap/RSS reference it
 - **Verify:** production root, `/about/`, and `/sitemap-index.xml` return HTTP 200
+
+## Post-deploy SEO checks (2026-10-23)
+
+- **GSC placeholder:** `public/google-site-verification-PLACEHOLDER.html` committed containing `google-site-verification: google-PLACEHOLDER.html`; README documents replacing with real `googleXXXX.html`. Build env `GSC_VERIFICATION` optionally emits the `<meta name="google-site-verification">` tag (omitted when empty).
+- **robots.txt:** allows all (`User-agent: *` / `Allow: /`), no Disallow; `Sitemap:` URL now includes BASE_PATH and resolves on both deploys:
+  - Pages: `https://john-the-r-ipper.github.io/latticewire/robots.txt` → sitemap `.../latticewire/sitemap-index.xml`
+  - Vercel: `https://latticewire.vercel.app/robots.txt` → sitemap `.../sitemap-index.xml`
+- **noindex:** none in source or built output.
+- **Playwright checks:** `npm run check:live` (`BASE_URL=<target>`), chromium installed locally (not committed); home, /about/, all 6 post URLs, robots.txt, sitemap-index reachable HTTP 200; no noindex meta on any page.
+
+### Live results
+
+| Target | Result |
+|--------|--------|
+| GitHub Pages `https://john-the-r-ipper.github.io/latticewire/` | 5/5 passed |
+| Vercel prod `https://latticewire.vercel.app/` | 5/5 passed |
+
+CHECKS_PAGES=pass CHECKS_VERCEL=pass
