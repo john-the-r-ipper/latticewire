@@ -104,3 +104,19 @@ Added `/onlyorders/` hub page, three new OnlyOrders product posts, nav/JSON-LD l
 - IndexNow Vercel (`https://latticewire.vercel.app`): HTTP 202 Accepted (12 urls).
 
 NEW_URLS=https://john-the-r-ipper.github.io/latticewire/onlyorders/,https://john-the-r-ipper.github.io/latticewire/blog/onlyorders-what-is-onlyorders/,https://john-the-r-ipper.github.io/latticewire/blog/onlyorders-use-cases-chat-first-stores/,https://john-the-r-ipper.github.io/latticewire/blog/onlyorders-how-it-works/ INDEXNOW_PAGES=202 INDEXNOW_VERCEL=202 CHECKS=pass
+
+## Polish + GEO cycle (2026-10-23)
+
+- **Design:** serif/system typography pairing, ~70ch measure, hero kicker, post-card grid, dark mode via `prefers-color-scheme` + toggle button, responsive hamburger nav (≤700px).
+- **GEO:** added `/llms.txt` + `/llms-full.txt` (llmstxt.org: site summary, OnlyOrders facts from `docs/discovery.md`, all page links), `/faq/` page with FAQPage JSON-LD (verified OnlyOrders facts), `robots.txt` explicit `Allow: /` for GPTBot / OAI-SearchBot / ChatGPT-User / ClaudeBot / PerplexityBot / Google-Extended / CCBot / Applebot-Extended / Bingbot + `*` + Sitemap. Added clear "What is OnlyOrders?" definition to hub and the 3 OnlyOrders posts. No hidden text / no AI-agent instructions; no "Oryxa".
+- **Notes:** `docs/GEO_RESEARCH.md` does not exist (only the task file) → research-application step N/A.
+- **Build:** clean `npm run build` (13 pages) green for default and Pages env (`SITE_URL=https://john-the-r-ipper.github.io BASE_PATH=/latticewire/`).
+
+### Live results
+
+| Target | Result |
+|--------|--------|
+| GitHub Pages `https://john-the-r-ipper.github.io/latticewire/` (run 39980492336) | 8/8 passed |
+| Vercel prod `https://latticewire.vercel.app` | 8/8 passed |
+
+POLISH: latticewire checks=pass indexnow=200/200
