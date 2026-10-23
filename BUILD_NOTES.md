@@ -86,3 +86,21 @@ $ npm run build
 | Vercel prod `https://latticewire.vercel.app/` | 5/5 passed |
 
 CHECKS_PAGES=pass CHECKS_VERCEL=pass
+
+## OnlyOrders content cycle (2026-10-23)
+
+Added `/onlyorders/` hub page, three new OnlyOrders product posts, nav/JSON-LD links, sitemap priorities, and IndexNow.
+
+- **New pages:** `/onlyorders/` (hub) + posts `/blog/onlyorders-what-is-onlyorders/`, `/blog/onlyorders-use-cases-chat-first-stores/`, `/blog/onlyorders-how-it-works/`.
+- **OnlyOrders linking:** main nav link; Organization publisher JSON-LD (url + sameAs → https://onlyorders.tech) in layout head; existing footer + about links retained; internal links from three-channel, why-chat-commerce, and Bangladesh posts into the hub/new posts.
+- **Sitemap:** `@astrojs/sitemap` now serializes — priority 1.0 for `/onlyorders/` and the three post URLs (verified 4× 1.0, 8× 0.6), changefreq weekly on all. robots.txt continues to be generated from SITE_URL+BASE_PATH.
+- **IndexNow:** key file `public/def919c16acef141440176b86785ea4f.txt` (32-hex); `scripts/indexnow.mjs` reads the live sitemap and POSTs to https://api.indexnow.org/indexnow; npm script `indexnow`.
+
+### Live results
+
+- GitHub Pages workflow run 39978502035: success. `check:live` (Pages): 6/6 passed.
+- Vercel production redeploy: https://latticewire.vercel.app ready. `check:live` (Vercel): 6/6 passed.
+- IndexNow Pages (`https://john-the-r-ipper.github.io/latticewire`): HTTP 202 Accepted (12 urls).
+- IndexNow Vercel (`https://latticewire.vercel.app`): HTTP 202 Accepted (12 urls).
+
+NEW_URLS=https://john-the-r-ipper.github.io/latticewire/onlyorders/,https://john-the-r-ipper.github.io/latticewire/blog/onlyorders-what-is-onlyorders/,https://john-the-r-ipper.github.io/latticewire/blog/onlyorders-use-cases-chat-first-stores/,https://john-the-r-ipper.github.io/latticewire/blog/onlyorders-how-it-works/ INDEXNOW_PAGES=202 INDEXNOW_VERCEL=202 CHECKS=pass
