@@ -48,3 +48,14 @@ $ npm run build
 - `/robots.txt`
 - `/rss.xml`
 - `/sitemap-index.xml` (+ `/sitemap-0.xml`)
+
+## GitHub Pages deployment
+
+- **Repo:** https://github.com/john-the-r-ipper/latticewire (public)
+- **Pages URL:** https://john-the-r-ipper.github.io/latticewire/
+- **Workflow:** `.github/workflows/pages.yml` (build + upload-pages-artifact + deploy-pages) on push to `main`
+- **Build parity:** `SITE_URL=https://john-the-r-ipper.github.io BASE_PATH=/latticewire/ npm run build` → 8 pages built green
+- **Deploy status:** workflow run succeeded (build + deploy jobs green); root and `/about/` return HTTP 200
+- **Pages config:** `build_type=workflow`, source branch `main`, path `/`
+- **Secret scan:** clean — no keys, no `sk_`, no `ghp_`, no `.env` in tree
+- **Disclosure:** `/about` discloses operation by OnlyOrders (https://onlyorders.tech); no "Oryxa" references anywhere
