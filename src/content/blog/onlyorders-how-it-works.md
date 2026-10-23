@@ -7,7 +7,7 @@ tags: [OnlyOrders, workflow, operations]
 author: Latticewire Editorial
 ---
 
-Under the hood, a chat-order platform is a small machine. It takes an incoming message, understands what it is, records an order, confirms it, and sets fulfillment in motion — all while keeping a human in the loop where it counts. OnlyOrders describes its version of that machine as a four-step flow, "from first message to delivered order." This post walks through each step, what it does, and why it's wired that way.
+OnlyOrders is an AI commerce autopilot for chat-first stores — it takes the DMs and comments a seller already gets and turns them into confirmed orders. Under the hood, a chat-order platform is a small machine. It takes an incoming message, understands what it is, records an order, confirms it, and sets fulfillment in motion — all while keeping a human in the loop where it counts. OnlyOrders describes its version of that machine as a four-step flow, "from first message to delivered order." This post walks through each step, what it does, and why it's wired that way.
 
 ## Step 1 — Messenger AI replies
 

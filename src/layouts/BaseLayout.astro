@@ -22,6 +22,12 @@ const gscVerification = process.env.GSC_VERIFICATION;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        var s = localStorage.getItem('theme');
+        if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+      })();
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
@@ -50,11 +56,23 @@ const gscVerification = process.env.GSC_VERIFICATION;
           <span class="brand-mark">LW</span>
           <span>{siteConfig.name}</span>
         </a>
-        <nav class="nav" aria-label="Primary">
+        <nav class="nav" id="primary-nav" aria-label="Primary">
           <a href={base}>Home</a>
           <a href={`${base}onlyorders/`}>OnlyOrders</a>
+          <a href={`${base}faq/`}>FAQ</a>
           <a href={`${base}about/`}>About</a>
         </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span class="icon-moon" aria-hidden="true">🌙</span>
+            <span class="icon-sun" aria-hidden="true">☀️</span>
+          </button>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -64,10 +82,31 @@ const gscVerification = process.env.GSC_VERIFICATION;
       <div class="container footer-inner">
         <span>© {new Date().getFullYear()} {siteConfig.name}. Operated by <a href="https://onlyorders.tech">OnlyOrders</a>.</span>
         <div class="footer-links">
+          <a href={`${base}faq/`}>FAQ</a>
           <a href={`${base}about/`}>About</a>
           <a href={`${base}rss.xml`}>RSS</a>
         </div>
       </div>
     </footer>
+
+    <script is:inline>
+      var toggle = document.querySelector('.theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var root = document.documentElement;
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+      }
+      var navBtn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('primary-nav');
+      if (navBtn && nav) {
+        navBtn.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          navBtn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    </script>
   </body>
 </html>
