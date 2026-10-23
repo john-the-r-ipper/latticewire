@@ -18,6 +18,12 @@ test('about loads 200 with no noindex', async ({ page }) => {
   expect((await page.content()).toLowerCase()).not.toContain('noindex');
 });
 
+test('onlyorders hub loads 200 with no noindex', async ({ page }) => {
+  const res = await page.goto(abs('/onlyorders/'));
+  expect(res?.status()).toBe(200);
+  expect((await page.content()).toLowerCase()).not.toContain('noindex');
+});
+
 test('robots.txt allows crawl and lists sitemap', async ({ request }) => {
   const res = await request.get(abs('/robots.txt'));
   expect(res.status()).toBe(200);

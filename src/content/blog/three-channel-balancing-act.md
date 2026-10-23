@@ -61,7 +61,7 @@ A few anti-patterns worth flagging:
 
 ## A note from our operator
 
-Full disclosure: we're operated by OnlyOrders, a company that builds AI auto-reply and chat-order software across Messenger, WhatsApp, and Instagram. We've watched a lot of small sellers wrestle with this exact problem, and the pattern is consistent — the winners are the ones who solve the single-inbox question early rather than bolting on fixes per channel. We keep this blog educational, but this is a case where we genuinely believe the product category exists because the problem is real.
+Full disclosure: we're operated by OnlyOrders, a company that builds AI auto-reply and chat-order software across Messenger, WhatsApp, and Instagram. We've watched a lot of small sellers wrestle with this exact problem, and the pattern is consistent — the winners are the ones who solve the single-inbox question early rather than bolting on fixes per channel. We keep this blog educational, but this is a case where we genuinely believe the product category exists because the problem is real — see our [OnlyOrders overview](../../onlyorders/) for how one platform approaches the single-inbox question.
 
 ## The bottom line
 
